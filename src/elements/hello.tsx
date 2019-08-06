@@ -18,6 +18,7 @@ define("hello-element", class extends WeElement {
         color: red;
         cursor: pointer;
       }`;
+
   installed() {
     console.log(this.props);
   }

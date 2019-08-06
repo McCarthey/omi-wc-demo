@@ -4,7 +4,7 @@ import "./index.css";
 import * as css from "./_index.less";
 import * as logo from "./logo.svg";
 import "@omim/core/text-field";
-import "./elements/hello";
+import "./elements/hello/index";
 
 interface MyAppProps {
   name: string;

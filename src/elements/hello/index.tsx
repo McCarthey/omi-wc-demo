@@ -1,6 +1,7 @@
-import { define, WeElement, h } from "omi";
+import { define, WeElement, h, tag } from "omi";
 
-define("hello-element", class extends WeElement {
+@tag("hello-element")
+export default class HelloElement extends WeElement {
   onClick = evt => {
     // trigger CustomEvent
     this.fire("abc", { name: "Mc", age: 12 });
@@ -13,20 +14,16 @@ define("hello-element", class extends WeElement {
     list: Array
   };
 
-  static css = `
-      div {
-        color: red;
-        cursor: pointer;
-      }`;
+  static css = require('./_hello.less')
 
   installed() {
-    console.log(this.props);
+    console.log(this.css);
   }
 
   render(props) {
     return (
       <div onClick={this.onClick}>
-        Hi {props.msg}
+        <h2>Hi {props.msg}</h2>
         <div>Click Me!</div>
         {props.list.map(item => (
           <a href={item.url} target="_blank">
@@ -36,4 +33,4 @@ define("hello-element", class extends WeElement {
       </div>
     );
   }
-});
+}

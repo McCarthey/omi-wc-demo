@@ -1,8 +1,6 @@
 const path = require('path');
-const merge = require('webpack-merge');
 const webpack = require('webpack');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const name = process.argv[2]
 let library = name.replace(/-(\w)/g, ($, $1) => {
@@ -12,18 +10,23 @@ let library = name.replace(/-(\w)/g, ($, $1) => {
 library = 'DM' + library.substr(0, 1).toUpperCase() + library.substr(1, library.length)
 
 const config = {
-    mode: 'production',
+    mode: 'development',
     devtool: 'source-map',
     entry: {
-        [name]: '../src/' + name + '/index.tsx'
+        [name]: path.resolve(__dirname, '../src/' + name + '/index.tsx')
     },
     output: {
-        path: path.resolve(__dirname, '../src/' + name),
+        path: path.resolve(__dirname, '../build/' + name),
         filename: 'index.js',
-        // libraryTarget: 'umd',
-        // library: library,
-        // libraryExport: 'default'
+        libraryTarget: 'umd',
+        library: library,
+        libraryExport: 'default'
     },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: '/[name]/style.css'
+        }),
+    ],
     module: {
         rules: [{
             test: /\.css$/,
@@ -60,6 +63,7 @@ const config = {
 
 webpack(config, (err, stats) => { // Stats Object
     if (err || stats.hasErrors()) {
+        console.log(err, stats)
         // Handle errors here
     }
     // Done processing

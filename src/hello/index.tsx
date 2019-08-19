@@ -1,4 +1,4 @@
-import { define, WeElement, h, tag } from 'omi'
+import { WeElement, h, tag } from 'omi'
 
 @tag('hello-element')
 export default class HelloElement extends WeElement {

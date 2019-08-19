@@ -1,14 +1,8 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const packageJson = require('../package.json')
 
 module.exports = {
-
-    entry: [
-        path.join(__dirname, '..', 'src/index.tsx')
-    ],
-
     devServer: {
         port: 3000
     },
@@ -88,16 +82,5 @@ module.exports = {
     externals: {
 
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '..', 'src/index.html'),
-            inject: true,
-        })
-        , new MiniCssExtractPlugin({
-            filename: "[name].css",
-            chunkFilename: "[id].css"
-        })
-    ],
-
 }
 

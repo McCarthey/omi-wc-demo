@@ -35,14 +35,6 @@ export default class extends WeElement<MyAppProps, MyAppData> {
                     <img src={logo} class="app-logo" alt="logo" />
                     <h1 class="app-title">Welcome to {props.name}</h1>
                 </header>
-                {this.data.abc}
-                <hello-omi onAbc={this.onAbc} msg="Omi" />
-                <hello-element
-                    onAbc={this.onAbc}
-                    msg="WeElement"
-                    list={this.data.urlList}
-                />
-                <m-text-field label="test" />
             </div>
         )
     }

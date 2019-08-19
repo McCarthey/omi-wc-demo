@@ -1,6 +1,6 @@
 import { WeElement, h, tag } from 'omi'
 
-@tag('hello-element')
+@tag('dm-hello')
 export default class HelloElement extends WeElement {
     onClick = evt => {
         // trigger CustomEvent
@@ -8,7 +8,7 @@ export default class HelloElement extends WeElement {
         evt.stopPropagation()
     }
 
-    //如果需要在 html 里直接使用 <hello-element></hello-element>，必须声明 propTypes
+    //如果需要在 html 里直接使用 <dm-hello></dm-hello>，必须声明 propTypes
     static propTypes = {
         msg: String,
         list: Array

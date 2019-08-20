@@ -32,7 +32,7 @@ export default class extends WeElement<MyAppProps, MyAppData> {
         return (
             <div class="app">
                 <dm-header />
-                <dm-hello msg="shit" list={this.data.urlList} />
+                <dm-hello msg="test" list={this.data.urlList} />
             </div>
         )
     }

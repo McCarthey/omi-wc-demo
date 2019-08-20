@@ -13,7 +13,7 @@ export default class Header extends WeElement {
     }
 
     closeMenuList = evt => {
-        this.data.showMenu = false 
+        this.data.showMenu = false
         this.update()
     }
 
@@ -49,15 +49,22 @@ export default class Header extends WeElement {
                         class="sidebar-bg"
                         onClick={this.closeMenuList}
                         style={
-                            this.data.showMenu
-                                ? {
-                                      visibility: 'visible',
-                                      opacity: 1
-                                  }
-                                : {}
+                            this.data.showMenu && {
+                                visibility: 'visible',
+                                opacity: 1
+                            }
                         }
                     />
-                    <div />
+                    <div
+                        class="sidebar-content"
+                        style={
+                            this.data.showMenu && {
+                                width: '280px'
+                            }
+                        }
+                    >
+                        test
+                    </div>
                 </div>
             </div>
         )

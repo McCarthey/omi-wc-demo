@@ -22,11 +22,6 @@ const config = {
         library: library,
         libraryExport: 'default'
     },
-    plugins: [
-        new MiniCssExtractPlugin({
-            filename: '/[name]/style.css'
-        }),
-    ],
     module: {
         rules: [{
             test: /\.css$/,
@@ -59,6 +54,14 @@ const config = {
             exclude: /node_modules/
         }]
     },
+    externals: {
+        'omi': {
+            commonjs: "omi",
+            commonjs2: "omi",
+            amd: "omi",
+            root: "Omi"
+        }
+    }
 }
 
 webpack(config, (err, stats) => { // Stats Object

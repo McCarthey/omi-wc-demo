@@ -14,7 +14,7 @@ export default class HelloElement extends WeElement {
         list: Array
     }
 
-    static css = require('./_hello.less')
+    static css = require('./_style.less')
 
     installed() {
         console.log(this.css)

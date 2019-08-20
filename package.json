@@ -33,8 +33,9 @@
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
-    "omi": "latest",
     "@omim/core": "latest",
+    "omi": "latest",
+    "omim": "^0.1.17",
     "omio": "latest"
   },
   "alias": {

@@ -24,9 +24,11 @@ export default class Header extends WeElement {
 
     static propTypes = {}
 
-    static css = require('./_style.less')
+    static css = require('./_style.css')
 
-    installed() {}
+    installed() {
+        console.log(this.css)
+    }
 
     render(props) {
         return (

@@ -21,9 +21,9 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    &:hover {
-        opacity: 1;
-    }
+}
+.menu-trigger:hover {
+    opacity: 1;
 }
 
 /* -------------------- 侧边栏样式 ------------------- */

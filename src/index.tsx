@@ -2,9 +2,10 @@ import { WeElement, render, h, define, tag } from 'omi'
 import './hello-omi'
 import './index.css'
 import * as css from './_index.less'
-import '@omim/core/text-field'
+// import './hello'
 import '../build/hello'
-import './header'
+// import './header'
+import '../build/header'
 
 interface MyAppProps {
     name: string

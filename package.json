@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --config ./config/webpack.dev.js",
     "build": "node ./config/webpack.build.js",
-    "build-all": "npm run build -- hello"
+    "build-all": "npm run build -- hello && npm run build -- header"
   },
   "devDependencies": {
     "css": "^2.2.4",
@@ -33,7 +33,6 @@
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
-    "@omim/core": "latest",
     "omi": "latest",
     "omim": "^0.1.17",
     "omio": "latest"

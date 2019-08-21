@@ -20,7 +20,10 @@ export default class Header extends WeElement {
         clearTimeout(this.data.timer)
         this.update()
     }
-
+    
+    /**
+     * @param {string}
+     */
     toggleMenuList = evt => {
         this.data.showMenu = !this.data.showMenu
         clearTimeout(this.data.timer)

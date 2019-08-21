@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const opn = require('opn');
 
-opn('http://localhost:3000/')
+opn('http://localhost:8799/')
 
 module.exports = merge(require('./webpack.base'), {
     entry: [

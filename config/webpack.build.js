@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const name = process.argv[2]
 let library = name.replace(/-(\w)/g, ($, $1) => {
@@ -10,7 +9,7 @@ let library = name.replace(/-(\w)/g, ($, $1) => {
 library = 'DM' + library.substr(0, 1).toUpperCase() + library.substr(1, library.length)
 
 const config = {
-    mode: 'development',
+    mode: 'production',
     devtool: 'source-map',
     entry: {
         [name]: path.resolve(__dirname, '../src/' + name + '/index.tsx')
@@ -61,7 +60,7 @@ const config = {
             amd: "omi",
             root: "Omi"
         }
-    }
+    },
 }
 
 webpack(config, (err, stats) => { // Stats Object

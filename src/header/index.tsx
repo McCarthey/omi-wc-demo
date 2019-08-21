@@ -13,7 +13,6 @@ export default class Header extends WeElement {
             this.data.showMenu = true
             this.update()
         }, 500)
-        console.log(this.data.timer)
     }
 
     closeMenuList = evt => {
@@ -33,7 +32,6 @@ export default class Header extends WeElement {
     static css = require('./_style.css')
 
     installed() {
-        console.log(this.css)
     }
 
     render(props) {

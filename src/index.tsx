@@ -1,11 +1,10 @@
 import { WeElement, render, h, define, tag } from 'omi'
-import './hello-omi'
 import './index.css'
 import * as css from './_index.less'
-// import './hello'
-import '../build/hello'
-// import './header'
-import '../build/header'
+import './hello'
+// import '../build/hello'
+import './header'
+// import '../build/header'
 
 interface MyAppProps {
     name: string

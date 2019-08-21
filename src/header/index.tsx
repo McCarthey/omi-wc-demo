@@ -4,21 +4,27 @@ import 'omim/icon'
 @tag('dm-header')
 export default class Header extends WeElement {
     data = {
-        showMenu: false
+        showMenu: false,
+        timer: null
     }
 
     showMenuList = evt => {
-        this.data.showMenu = true
-        this.update()
+        this.data.timer = setTimeout(() => {
+            this.data.showMenu = true
+            this.update()
+        }, 500)
+        console.log(this.data.timer)
     }
 
     closeMenuList = evt => {
         this.data.showMenu = false
+        clearTimeout(this.data.timer)
         this.update()
     }
 
     toggleMenuList = evt => {
         this.data.showMenu = !this.data.showMenu
+        clearTimeout(this.data.timer)
         this.update()
     }
 
@@ -37,6 +43,7 @@ export default class Header extends WeElement {
                     <div
                         class="menu-trigger"
                         onMouseEnter={this.showMenuList}
+                        onMouseLeave={() => clearTimeout(this.data.timer)}
                         onClick={this.toggleMenuList}
                     >
                         <m-icon

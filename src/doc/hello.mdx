@@ -1,0 +1,57 @@
+---
+name: Hello world
+route: /hello-world
+---
+
+## 安装
+
+需要先安装 omi，才可以使用该组件库
+
+#### 通过 npm 安装
+
+```shell
+npm i omi omi-wc-demo
+```
+
+#### 使用 yarn 安装
+
+```shell
+yarn add omi omi-wc-demo
+```
+
+## 使用
+
+以[header](/header)组件为例：
+
+### Vue 中使用
+
+```jsx
+<template>
+    <div>
+        <dm-header />
+    </div>
+</template>
+
+<script>
+    import 'omi'
+    import 'omi-wc-demo/build/header/'
+    // ...
+</script>
+```
+
+### React 中使用
+
+```jsx
+import 'omi'
+import 'omi-wc-demo/build/header'
+
+export default class Demo extends React.Component {
+    render() {
+        return (
+            <div>
+                <dm-header />
+            </div>
+        )
+    }
+}
+```

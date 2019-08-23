@@ -2,9 +2,9 @@ import { WeElement, render, h, define, tag } from 'omi'
 import './index.css'
 import * as css from './_index.less'
 import './hello'
-// import '../build/hello'
 import './header'
 // import '../build/header'
+import './avatar'
 
 interface MyAppProps {
     name: string
@@ -31,7 +31,15 @@ export default class extends WeElement<MyAppProps, MyAppData> {
     render(props) {
         return (
             <div class="app">
-                <dm-header />
+                <dm-header
+                    avatarConfig={{
+                        src: '',
+                        name: 'TsT',
+                        size: 50,
+                        bgColor: '#ff3000',
+                        notices: 8
+                    }}
+                />
                 <dm-hello msg="test" list={this.data.urlList} />
             </div>
         )

@@ -6,6 +6,24 @@ import 'omim/badge'
 export default class HelloElement extends WeElement {
     static css = require('./_style.css')
 
+    static defaultProps = {
+        src: '',
+        name: 'Admin',
+        size: 40,
+        color: '#fff',
+        bgColor: '#87d068',
+        notices: 0
+    }
+
+    static propTypes = {
+        src: String,
+        name: String,
+        size: Number,
+        color: String,
+        bgColor: String,
+        notices: Number
+    }
+
     data = {
         avatarPopover: false
     }
@@ -13,7 +31,7 @@ export default class HelloElement extends WeElement {
     showAvatarPopover = evt => {
         this.data.avatarPopover = !this.data.avatarPopover
         this.update()
-    }
+    } 
 
     installed() {}
 
@@ -21,24 +39,24 @@ export default class HelloElement extends WeElement {
         return (
             <div>
                 <div
-                    id="avatar-wrapper"
+                    className="avatar-wrapper"
                     onMouseEnter={this.showAvatarPopover}
                     onMouseLeave={this.showAvatarPopover}
                 >
-                    <m-badge content="99">
-                        <m-avatar background-color="#87d068">k8s</m-avatar>
+                    <m-badge content={props.notices > 99 ? '99+' : props.notices}>
+                        <m-avatar src={props.src} color={props.color} background-color={props.bgColor}>{props.name}</m-avatar>
                     </m-badge>
                     {/* 头像容器悬浮层 */}
                     <div
                         className="avatar-popover"
                         style={
                             this.data.avatarPopover && {
-                                height: '360px'
+                                height: '360px',
+                                left: '',
+                                right: ''
                             }
                         }
-                    >
-                        content
-                    </div>
+                    />
                 </div>
             </div>
         )

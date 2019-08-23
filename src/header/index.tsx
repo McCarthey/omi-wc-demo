@@ -4,7 +4,27 @@ import '../avatar'
 
 @tag('dm-header')
 export default class Header extends WeElement {
-    static propTypes = {}
+    static defaultProps = {
+        avatarConfig: {
+            src: '',
+            name: 'K8s',
+            size: 40,
+            color: '#fff',
+            bgColor: '#87d068',
+            notices: 0
+        }
+    }
+
+    static propTypes = {
+        avatarConfig: {
+            src: String,
+            name: String,
+            size: Number,
+            color: String,
+            bgColor: String,
+            notices: Number
+        }
+    }
 
     static css = require('./_style.css')
 
@@ -22,7 +42,7 @@ export default class Header extends WeElement {
                 name: 'Kubedash',
                 link: 'http://192.168.1.17:30880/dashboard'
             }
-        ],
+        ]
     }
 
     showMenuList = evt => {
@@ -63,7 +83,7 @@ export default class Header extends WeElement {
                         />
                     </div>
                     {/* 头像组件（包含头像悬浮框） */}
-                    <dm-avatar />
+                    <dm-avatar {...props.avatarConfig} />
                 </header>
 
                 {/* 侧边栏 */}

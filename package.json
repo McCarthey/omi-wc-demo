@@ -11,7 +11,7 @@
     "docz:build": "docz build",
     "start": "webpack-dev-server --config ./config/webpack.dev.js",
     "build": "node ./config/webpack.build.js",
-    "build-all": "npm run build -- hello && npm run build -- header"
+    "build-all": "npm run build -- hello && npm run build -- header && npm run build -- avatar"
   },
   "devDependencies": {
     "css": "^2.2.4",

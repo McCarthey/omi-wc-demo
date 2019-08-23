@@ -1,5 +1,5 @@
 /* --------------------- 头像样式 ---------------------*/
-#avatar-wrapper {
+.avatar-wrapper {
     position: relative;
     padding: 10px 20px 0 0;
     cursor: pointer;

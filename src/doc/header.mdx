@@ -11,3 +11,29 @@ import '../build/header'
 
 <dm-header />
 ```
+
+### 属性
+```js
+static propTypes = {
+    avatarConfig: {
+        src: String,
+        name: String,
+        size: Number,
+        color: String,
+        bgColor: String,
+        notices: Number
+    }
+}
+
+// 属性默认值
+static defaultProps = {
+    avatarConfig: {
+        src: '',
+        name: 'K8s',
+        size: 40,
+        color: '#fff',
+        bgColor: '#87d068',
+        notices: 0
+    }
+}
+```

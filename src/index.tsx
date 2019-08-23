@@ -40,7 +40,7 @@ export default class extends WeElement<MyAppProps, MyAppData> {
                         notices: 8
                     }}
                 />
-                <dm-hello msg="test" list={this.data.urlList} />
+                {/* <dm-hello msg="test" list={this.data.urlList} /> */}
             </div>
         )
     }

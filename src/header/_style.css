@@ -26,15 +26,6 @@ header {
     opacity: 1;
 }
 
-/* --------------------- 头像样式 ---------------------*/
-#avatar-wrapper {
-    padding: 10px 20px 0 0;
-    cursor: pointer;
-}
-.avatar-content {
-    width: 280px;
-}
-
 /* -------------------- 侧边栏样式 ------------------- */
 .sidebar-container {
     position: fixed;

@@ -1,7 +1,6 @@
 import { WeElement, h, tag } from 'omi'
 import 'omim/icon'
-import 'omim/avatar'
-import 'omim/badge'
+import '../avatar'
 
 @tag('dm-header')
 export default class Header extends WeElement {
@@ -24,7 +23,6 @@ export default class Header extends WeElement {
                 link: 'http://192.168.1.17:30880/dashboard'
             }
         ],
-        avatarPopover: false
     }
 
     showMenuList = evt => {
@@ -48,11 +46,6 @@ export default class Header extends WeElement {
 
     installed() {}
 
-    showAvatarPopover = evt => {
-        this.data.avatarPopover = !this.data.avatarPopover 
-        this.update()
-    }
-
     render(props) {
         return (
             <div>
@@ -69,22 +62,10 @@ export default class Header extends WeElement {
                             path="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"
                         />
                     </div>
-                    {/* 头像容器 */}
-                    <div>
-                        <div
-                            id="avatar-wrapper"
-                            onClick={this.showAvatarPopover}
-                        >
-                            <m-badge content="99">
-                                <m-avatar background-color="#87d068">
-                                    k8s
-                                </m-avatar>
-                            </m-badge>
-                        </div>
-                    </div>
+                    {/* 头像组件（包含头像悬浮框） */}
+                    <dm-avatar />
                 </header>
-                {/* 头像容器悬浮层 */}
-           
+
                 {/* 侧边栏 */}
                 <div class="sidebar-container">
                     <div

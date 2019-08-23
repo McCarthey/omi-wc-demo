@@ -31,7 +31,7 @@ export default class HelloElement extends WeElement {
     showAvatarPopover = evt => {
         this.data.avatarPopover = !this.data.avatarPopover
         this.update()
-    } 
+    }
 
     installed() {}
 
@@ -43,20 +43,31 @@ export default class HelloElement extends WeElement {
                     onMouseEnter={this.showAvatarPopover}
                     onMouseLeave={this.showAvatarPopover}
                 >
-                    <m-badge content={props.notices > 99 ? '99+' : props.notices}>
-                        <m-avatar src={props.src} color={props.color} background-color={props.bgColor}>{props.name}</m-avatar>
+                    <m-badge
+                        content={props.notices > 99 ? '99+' : props.notices}
+                    >
+                        <m-avatar
+                            src={props.src}
+                            color={props.color}
+                            background-color={props.bgColor}
+                        >
+                            {props.name}
+                        </m-avatar>
                     </m-badge>
                     {/* 头像容器悬浮层 */}
                     <div
                         className="avatar-popover"
                         style={
                             this.data.avatarPopover && {
-                                height: '360px',
-                                left: '',
-                                right: ''
+                                height: '72px',
                             }
                         }
-                    />
+                    >
+                        <ul className="avatar-popover-list">
+                            <li className="avatar-popover-item">账号信息</li>
+                            <li className="avatar-popover-item">退出登录</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         )

@@ -26,6 +26,15 @@ header {
     opacity: 1;
 }
 
+/* --------------------- 头像样式 ---------------------*/
+#avatar-wrapper {
+    padding: 10px 20px 0 0;
+    cursor: pointer;
+}
+.avatar-content {
+    width: 280px;
+}
+
 /* -------------------- 侧边栏样式 ------------------- */
 .sidebar-container {
     position: fixed;
@@ -56,4 +65,35 @@ header {
     width: 0;
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+ul.sidebar-menu-wrapper {
+    padding: 0;
+    list-style: none;
+    font-size: 12px;
+}
+
+li.sidebar-menu-item {
+    position: relative;
+    padding: 0 8px 0 12px;
+    transition: .3s;
+}
+li.sidebar-menu-item:hover {
+    background:#eee;
+}
+
+.sidebar-menu-icon {
+    position: absolute;
+    height: 40px;
+    line-height: 40px;
+    left: 12px;
+    top: 0px;
+}
+
+.sidebar-menu-text {
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 40px;
 }

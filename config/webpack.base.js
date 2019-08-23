@@ -4,7 +4,7 @@ const packageJson = require('../package.json')
 
 module.exports = {
     devServer: {
-        port: 3000
+        port: 8799 
     },
     
     resolve: {

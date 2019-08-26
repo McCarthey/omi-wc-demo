@@ -7,8 +7,8 @@
     "/build/"
   ],
   "scripts": {
-    "docz:dev": "docz dev",
-    "docz:build": "docz build",
+    "doc:dev": "cd ./docs && gatsby develop",
+    "doc:build": "cd ./docs && gatsby build",
     "start": "webpack-dev-server --config ./config/webpack.dev.js",
     "build": "node ./config/webpack.build.js",
     "build-all": "npm run build -- hello && npm run build -- header && npm run build -- avatar"

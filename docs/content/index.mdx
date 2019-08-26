@@ -1,30 +1,59 @@
 ---
-title: "Landing Page"
+title: "介绍"
+route: /index
 ---
 
-Some introduction text. Lists out all the headings from h1 to h6. Easy to customise. Some more text. Additional text.
+这是[omi-wc-demo](https://github.com/McCarthey/omi-wc-demo)组件库的使用文档
 
-# Heading H1
-Heading 1 text
+## 安装 
 
-## Heading H2
-Heading 2 text
+需要先安装 omi，才可以使用该组件库
 
-### Heading H3
-Heading 3 text
+#### 通过 npm 安装
 
-#### Heading H4
-Heading 4 text
+```
+npm i omi omi-wc-demo
+```
 
-##### Heading H5
-Heading 5 text
+#### 使用 yarn 安装
 
-###### Heading H6
-Heading 6 text
+```
+yarn add omi omi-wc-demo
+```
 
-## Lists
-- Item 1
-- Item 2
-- Item 3
-- Item 4
-- Item 5
+## 使用
+
+以[header](/components/header)组件为例：
+
+### Vue 中使用
+
+```jsx
+<template>
+    <div>
+        <dm-header />
+    </div>
+</template>
+
+<script>
+import 'omi'
+import 'omi-wc-demo/build/header/'
+    // ...
+</script>
+```
+
+### React 中使用
+
+```jsx
+import 'omi'
+import 'omi-wc-demo/build/header'
+
+export default class Demo extends React.Component {
+    render() {
+        return (
+            <div>
+                <dm-header />
+            </div>
+        )
+    }
+}
+```

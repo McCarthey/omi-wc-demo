@@ -1,23 +1,10 @@
 ---
-name: Hello world
-route: /hello-world
+title: "组件"
+metaTitle: "组件"
+metaDescription: "组件页"
 ---
 
-## 安装
-
-需要先安装 omi，才可以使用该组件库
-
-#### 通过 npm 安装
-
-```shell
-npm i omi omi-wc-demo
-```
-
-#### 使用 yarn 安装
-
-```shell
-yarn add omi omi-wc-demo
-```
+介绍组件的使用
 
 ## 使用
 
@@ -33,8 +20,8 @@ yarn add omi omi-wc-demo
 </template>
 
 <script>
-    import 'omi'
-    import 'omi-wc-demo/build/header/'
+import 'omi'
+import 'omi-wc-demo/build/header/'
     // ...
 </script>
 ```

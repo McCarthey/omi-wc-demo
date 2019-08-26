@@ -24,17 +24,17 @@ const config = {
 	},
 	"sidebar": {
 		"forcedNavOrder": [
-			"/introduction",
+			"/",
     		"/codeblock"
 		],
 		"links": [
 			{ "text": "omi-wc-demo", "link": "https://github.com/McCarthey/omi-wc-demo"},
 		],
 		"frontline": false,
-		"ignoreIndex": true,
+		"ignoreIndex": false,
 	},
 	"siteMetadata": {
-		"title": "Gatsby Gitbook Boilerplate | Hasura",
+		"title": "web components",
 		"description": "Documentation built with mdx. Powering learn.hasura.io ",
 		"ogImage": null,
 		"docsLocation": "https://github.com/hasura/gatsby-gitbook-boilerplate/tree/master/content",

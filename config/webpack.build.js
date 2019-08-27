@@ -15,7 +15,7 @@ const config = {
         [name]: path.resolve(__dirname, '../src/' + name + '/index.tsx')
     },
     output: {
-        path: path.resolve(__dirname, '../build/' + name),
+        path: path.resolve(__dirname, '../src/' + name),
         filename: 'index.js',
         libraryTarget: 'umd',
         library: library,
@@ -50,7 +50,7 @@ const config = {
         {
             test: /\.[t|j]sx?$/,
             use: 'ts-loader',
-            exclude: /node_modules/
+            exclude: /node_modules/,
         }]
     },
     externals: {

@@ -1,10 +1,9 @@
 import { WeElement, render, h, define, tag } from 'omi'
 import './index.css'
-import * as css from './_index.less'
-import './hello'
-import './header'
+import './hello/index.tsx'
+import './header/index.tsx'
 // import '../build/header'
-import './avatar'
+import './avatar/index.tsx'
 
 interface MyAppProps {
     name: string
@@ -17,7 +16,7 @@ interface MyAppData {
 
 @tag('my-app')
 export default class extends WeElement<MyAppProps, MyAppData> {
-    static css = css
+    static css = require('./index.css')
     constructor() {
         super()
         this.data.urlList = [{ name: 'test', url: 'https://mccarthey.top' }]

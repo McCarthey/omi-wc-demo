@@ -1,20 +1,21 @@
 {
   "name": "omi-wc-demo",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "license": "MIT",
   "author": "Randall <randall@duomai.com>",
   "files": [
-    "/build/"
+    "/src/"
   ],
   "scripts": {
     "doc:dev": "cd ./docs && gatsby develop",
     "doc:build": "cd ./docs && gatsby build",
     "start": "webpack-dev-server --config ./config/webpack.dev.js",
     "build": "node ./config/webpack.build.js",
-    "build-all": "npm run build -- hello && npm run build -- header && npm run build -- avatar"
+    "build-all": "cross-env NODE_ENV=build npm run build -- hello && npm run build -- avatar && npm run build -- header"
   },
   "devDependencies": {
     "@emotion/core": "^10.0.16",
+    "cross-env": "^5.2.0",
     "css": "^2.2.4",
     "css-loader": "^1.0.1",
     "docz": "^2.0.0-rc.1",

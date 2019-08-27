@@ -1,0 +1,15 @@
+{
+    "name": "header",
+    "version": "0.0.1",
+    "description": "omi-wc-demo header",
+    "main": "index.js",
+    "keywords": [
+      "omi",
+      "omim",
+      "wc"
+    ],
+    "author": "",
+    "license": "MIT",
+    "homepage": "https://github.com/McCarthey/omi-wc-demo"
+  }
+  

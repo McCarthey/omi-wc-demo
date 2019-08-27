@@ -1,6 +1,6 @@
 import { WeElement, h, tag } from 'omi'
 import 'omim/icon'
-import '../avatar'
+import '../avatar/index.tsx'
 
 @tag('dm-header')
 export default class Header extends WeElement {
@@ -12,6 +12,9 @@ export default class Header extends WeElement {
             color: '#fff',
             bgColor: '#87d068',
             notices: 0
+        },
+        menuConfig: {
+            bgColor: ''
         }
     }
 
@@ -23,6 +26,9 @@ export default class Header extends WeElement {
             color: String,
             bgColor: String,
             notices: Number
+        },
+        menuConfig: {
+            bgColor: String
         }
     }
 
@@ -64,7 +70,13 @@ export default class Header extends WeElement {
         this.update()
     }
 
-    installed() {}
+    handleLogout = evt => {
+        console.log('header logout')
+        this.fire('logout')
+    }
+
+    installed() {
+    }
 
     render(props) {
         return (
@@ -76,6 +88,7 @@ export default class Header extends WeElement {
                         onMouseEnter={this.showMenuList}
                         onMouseLeave={() => clearTimeout(this.data.timer)}
                         onClick={this.toggleMenuList}
+                        style={{backgroundColor: props.menuConfig.bgColor}}
                     >
                         <m-icon
                             color="#fff"
@@ -83,7 +96,7 @@ export default class Header extends WeElement {
                         />
                     </div>
                     {/* 头像组件（包含头像悬浮框） */}
-                    <dm-avatar {...props.avatarConfig} />
+                    <dm-avatar {...props.avatarConfig} onLogout={this.handleLogout} />
                 </header>
 
                 {/* 侧边栏 */}

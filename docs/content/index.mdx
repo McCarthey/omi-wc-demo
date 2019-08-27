@@ -1,5 +1,5 @@
 ---
-title: "介绍"
+title: '介绍'
 route: /index
 ---
 
@@ -30,14 +30,22 @@ yarn add omi omi-wc-demo
 ```jsx
 <template>
     <div>
-        <dm-header />
+        <dm-header @logout="handleLogout" />
     </div>
 </template>
 
 <script>
 import 'omi'
 import 'omi-wc-demo/build/header/'
-    // ...
+
+export default {
+    // ....
+    methods: {
+        handleLogout() {
+            // logoutAPI
+        }
+    }
+}
 </script>
 ```
 
@@ -48,10 +56,14 @@ import 'omi'
 import 'omi-wc-demo/build/header'
 
 export default class Demo extends React.Component {
+    handleLogout = () => {
+        // logoutAPI
+    }
+
     render() {
         return (
             <div>
-                <dm-header />
+                <dm-header onLogout={this.handleLogout} />
             </div>
         )
     }

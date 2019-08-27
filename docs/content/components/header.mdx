@@ -1,18 +1,18 @@
 ---
-name: Header
+title: "Header 头部及侧边栏"
 route: /header
 ---
 
 ### 使用
 
 ```jsx
-
 import '../build/header'
 
-<dm-header />
+;<dm-header />
 ```
 
 ### 属性
+
 ```js
 static propTypes = {
     avatarConfig: {
@@ -22,6 +22,9 @@ static propTypes = {
         color: String,
         bgColor: String,
         notices: Number
+    },
+    menuConfig: {
+        bgColor: String
     }
 }
 
@@ -34,6 +37,9 @@ static defaultProps = {
         color: '#fff',
         bgColor: '#87d068',
         notices: 0
+    },
+    menuConfig: {
+        bgColor: ''
     }
 }
 ```

@@ -33,6 +33,11 @@ export default class HelloElement extends WeElement {
         this.update()
     }
 
+    handleLogout = evt => {
+        console.log('click logout')
+        this.fire
+    }
+
     installed() {}
 
     render(props) {
@@ -65,7 +70,7 @@ export default class HelloElement extends WeElement {
                     >
                         <ul className="avatar-popover-list">
                             <li className="avatar-popover-item">账号信息</li>
-                            <li className="avatar-popover-item">退出登录</li>
+                            <li className="avatar-popover-item" onClick={this.handleLogout}>退出登录</li>
                         </ul>
                     </div>
                 </div>

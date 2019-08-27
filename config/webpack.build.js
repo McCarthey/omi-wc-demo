@@ -15,7 +15,7 @@ const config = {
         [name]: path.resolve(__dirname, '../src/' + name + '/index.tsx')
     },
     output: {
-        path: path.resolve(__dirname, '../src/' + name),
+        path: path.resolve(__dirname, '../dist/' + name),
         filename: 'index.js',
         libraryTarget: 'umd',
         library: library,

@@ -71,7 +71,6 @@ export default class Header extends WeElement {
     }
 
     handleLogout = evt => {
-        console.log('header logout')
         this.fire('logout')
     }
 

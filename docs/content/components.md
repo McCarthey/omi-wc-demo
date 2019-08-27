@@ -21,7 +21,7 @@ metaDescription: "组件页"
 
 <script>
 import 'omi'
-import 'omi-wc-demo/build/header/'
+import 'omi-wc-demo/dist/header/'
     // ...
 </script>
 ```
@@ -30,7 +30,7 @@ import 'omi-wc-demo/build/header/'
 
 ```jsx
 import 'omi'
-import 'omi-wc-demo/build/header'
+import 'omi-wc-demo/dist/header'
 
 export default class Demo extends React.Component {
     render() {

@@ -27,6 +27,10 @@ export default class extends WeElement<MyAppProps, MyAppData> {
         this.update()
     }
 
+    logout = () => {
+        console.log('test')
+    }
+
     render(props) {
         return (
             <div class="app">
@@ -38,6 +42,7 @@ export default class extends WeElement<MyAppProps, MyAppData> {
                         bgColor: '#ff3000',
                         notices: 8
                     }}
+                    onLogout={this.logout}
                 />
                 {/* <dm-hello msg="test" list={this.data.urlList} /> */}
             </div>

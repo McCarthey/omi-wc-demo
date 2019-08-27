@@ -34,8 +34,7 @@ export default class HelloElement extends WeElement {
     }
 
     handleLogout = evt => {
-        console.log('click logout')
-        this.fire
+        this.fire('logout')
     }
 
     installed() {}

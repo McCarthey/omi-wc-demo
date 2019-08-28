@@ -48,7 +48,9 @@ export default {
 
 ### React 中使用
 
-**注意：在react中使用自定义事件时，需要手动绑定dom事件**
+注意：在react中使用自定义事件时，需要手动绑定dom事件
+
+或者可以使用[jsx-native-events](https://github.com/calebdwilliams/jsx-native-events#readme)来实现自定义事件。
 
 ```jsx
 import 'omi-wc-demo/dist/header'
@@ -70,6 +72,25 @@ export default class Demo extends React.Component {
         return (
             <div>
                 <dm-header ref={elem => (this.el = elem)} />
+            </div>
+        )
+    }
+}
+
+// or 使用 jsx-native-event 这个库
+/** @jsx nativeEvents */
+import nativeEvents from 'jsx-native-events'
+import 'omi-wc-demo/dist/header'
+
+export default class Demo extends React.Component {
+    handleLogout = () => {
+        // logoutAPI
+    }
+
+    render() {
+        return (
+            <div>
+                <dm-header onEventLogout={this.handleLogout} />
             </div>
         )
     }

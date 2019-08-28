@@ -20,16 +20,14 @@ metaDescription: "组件页"
 </template>
 
 <script>
-import 'omi'
 import 'omi-wc-demo/dist/header/'
-    // ...
+// ...
 </script>
 ```
 
 ### React 中使用
 
 ```jsx
-import 'omi'
 import 'omi-wc-demo/dist/header'
 
 export default class Demo extends React.Component {

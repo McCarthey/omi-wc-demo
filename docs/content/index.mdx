@@ -7,23 +7,21 @@ route: /index
 
 ## 安装
 
-需要先安装 omi，才可以使用该组件库
-
 #### 通过 npm 安装
 
 ```
-npm i omi omi-wc-demo
+npm i omi-wc-demo
 ```
 
 #### 使用 yarn 安装
 
 ```
-yarn add omi omi-wc-demo
+yarn add omi-wc-demo
 ```
 
 ## 使用
 
-以[header](/components/header)组件为例：
+以[header](/components/header)组件为例，其中header可以监听logout事件：
 
 ### Vue 中使用
 
@@ -35,7 +33,6 @@ yarn add omi omi-wc-demo
 </template>
 
 <script>
-import 'omi'
 import 'omi-wc-demo/dist/header/'
 
 export default {
@@ -51,11 +48,20 @@ export default {
 
 ### React 中使用
 
+**注意：在react中使用自定义事件时，需要手动绑定dom事件**
+
 ```jsx
-import 'omi'
 import 'omi-wc-demo/dist/header'
 
 export default class Demo extends React.Component {
+    componentDidMount() {
+        this.el.addEventListener('logout', this.handleLogout)
+    }
+
+    componentWillUnmount() {
+        this.el.removeEventListener('logout', this.handleLogout)
+    }
+
     handleLogout = () => {
         // logoutAPI
     }
@@ -63,7 +69,7 @@ export default class Demo extends React.Component {
     render() {
         return (
             <div>
-                <dm-header onLogout={this.handleLogout} />
+                <dm-header ref={elem => (this.el = elem)} />
             </div>
         )
     }
